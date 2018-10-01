@@ -1,0 +1,89 @@
+<div class="container">
+  <h1>Add-Product</h1>
+  <form class="example-form">
+    <mat-form-field class="example-full-width">
+      <input matInput placeholder="Product Name" [(ngModel)]="Product_name" name="Product_name">
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+      <input matInput placeholder="Category_Id" [(ngModel)]="Fk_category_id" name="Fk_category_id">
+    </mat-form-field>
+
+    <!-- <mat-form-field class="example-full-width">
+      <input matInput placeholder="Color_Id" [(ngModel)]="Fk_color_id" name="Fk_color_id">
+    </mat-form-field> -->
+
+    <h5>Colors</h5>
+    <section class="example-section" class="example-full-width">
+      <mat-checkbox class="example-margin" *ngFor="let item of color" name="colors" (change)="onCheckChangeColor(item)">{{item.Color_name}}</mat-checkbox>
+    </section>
+
+
+
+    <!--<mat-form-field class="example-full-width">
+      <input matInput placeholder="Size_id" [(ngModel)]="Fk_size_id" name="Fk_size_id">
+    </mat-form-field> -->
+
+    <h5>Sizes</h5>
+    <section class="example-section" class="example-full-width">
+      <mat-checkbox class="example-margin" *ngFor="let item of size" name="sizes" (change)="onCheckChangeSize(item)">{{item.Size_name}}</mat-checkbox>
+    </section>
+
+    <div class="form-group" [hidden]="this.sizes.length==0 || this.colors.length==0">
+      <h5>Quantity</h5>
+      <!--<table class="example-full-width">
+        <tr *ngFor="let item of colors;let i=index">
+          <table class="table">
+            <tr *ngFor="let item1 of sizes;let j=index">
+              <td>{{item.Color_name}}</td>
+              <td>{{item1.Size_name}}</td>
+
+                <td><input  type="number" style="width: 50px;" name="qty" (change)="onClickChange(item,i)" [(ngModel)]="qty[i]"></td>
+                <td><button (click)="onClickOk()">ok</button></td>
+            </tr>
+
+          </table>
+              </tr>
+      </table>-->
+        <table class="example-full-width">
+          <tr *ngFor="let item of extra_arr;let i=index">
+            <td>{{item.color.Color_name}}</td>
+            <td>{{item.size.Size_name}}</td>
+            <td><input type="number" name="qty" (chage)="onClickChange(item, i)" [(ngModel)]="qty[i]"></td>
+          </tr>
+        </table>
+    </div>
+
+
+
+    <div class="form-group">
+      <h5>Image:</h5> <input class="form-control" type="file" (change)="onChange($event)">
+    </div>
+
+    <mat-form-field class="example-full-width">
+      <input matInput placeholder="Descrption" [(ngModel)]="Product_desc" name="Product_image">
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+      <input matInput placeholder="Price" [(ngModel)]="Product_price" name="Product_price">
+    </mat-form-field>
+
+    <h5>Supplier</h5>
+    <section class="example-section" class="example-full-width">
+      <mat-radio-button class="example-margin" *ngFor="let item of supplier" name="suppliers" (change)="onCheckChangeSupplier(item)">{{item.Name}}</mat-radio-button>
+    </section>
+
+
+  </form>
+
+  <div class="row">
+    <div class="col-md-6">
+      <button class="btn btn-lg btn-primary form-control" (click)="onclickAdd()">ADD</button>
+    </div>
+    <div class="col-md-6">
+      <button class="btn btn-lg btn-danger form-control" (click)="flag=false">CANCEL</button>
+    </div>
+
+
+  </div>
+</div>
