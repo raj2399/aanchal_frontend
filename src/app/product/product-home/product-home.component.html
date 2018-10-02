@@ -1,0 +1,68 @@
+
+  <h1>
+
+  <b style="font-size: 50px; color:black;">Product Management</b>
+
+</h1>
+<mat-form-field >
+
+    <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter" >
+  </mat-form-field>
+
+<table mat-table [dataSource]="dataSource" matSort>
+    <!-- <ng-container matColumnDef="Action1">
+        <th mat-header-cell *matHeaderCellDef></th>
+
+          <mat-checkbox (change)="$event ? masterToggle() : null"
+                        [checked]="selection.hasValue() && isAllSelected()"
+                        [indeterminate]="selection.hasValue() && !isAllSelected()">
+          </mat-checkbox>
+
+
+        <td mat-cell *matCellDef="let arr">
+          <mat-checkbox (click)="$event.stopPropagation()"
+                        (change)="$event ? selection.toggle(row) : null"
+                        [checked]="selection.isSelected(row)">
+          </mat-checkbox>
+        </td>
+      </ng-container> -->
+
+      <ng-container matColumnDef="Action1">
+          <th mat-header-cell *matHeaderCellDef>  </th>
+          <td mat-cell *matCellDef="let arr">
+            <input type="checkbox" (change)="chacked(arr)">
+          </td>
+
+        </ng-container>
+
+<ng-container matColumnDef="Product_name">
+  <th mat-header-cell *matHeaderCellDef mat-sort-header> Name </th>
+  <td mat-cell *matCellDef="let arr"> {{arr.Product_name}} </td>
+</ng-container>
+
+
+<ng-container matColumnDef="Product_price">
+  <th mat-header-cell *matHeaderCellDef mat-sort-header> Price </th>
+  <td mat-cell *matCellDef="let arr"> {{arr.Product_price}} </td>
+</ng-container>
+
+
+<ng-container matColumnDef="Fk_category_name">
+  <th mat-header-cell *matHeaderCellDef mat-sort-header> Name </th>
+  <td mat-cell *matCellDef="let arr"> {{arr.Fk_category_id}} </td>
+</ng-container>
+
+<ng-container matColumnDef="Action">
+  <th mat-header-cell *matHeaderCellDef> Action </th>
+  <td mat-cell *matCellDef="let arr"><mat-icon>add</mat-icon>
+  </td>
+</ng-container>
+
+<tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>
+<mat-paginator
+[pageSizeOptions]=  "[5,10]">
+</mat-paginator>
+
+<button (click)="delete()">deleteAll</button>

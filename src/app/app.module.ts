@@ -16,22 +16,25 @@ import { MatCardModule,
   MatSelectModule,
   MatOptionModule,
   MatSidenavModule,
-  MatIconModule,
   MatMenuModule
    } from '@angular/material';
    import { MatFormFieldModule } from "@angular/material/form-field";
    import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ProductHomeComponent } from './product/product-home/product-home.component';
+import {MatIconModule} from '@angular/material/icon';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    AddProductComponent
+    AddProductComponent,
+    ProductHomeComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     BrowserAnimationsModule,
+    MatIconModule,
     MatTableModule,
     MatCheckboxModule,
     MatButtonModule,
@@ -39,7 +42,7 @@ import { MatCardModule,
     MatProgressSpinnerModule,
     MatSortModule,
     MatCardModule,
-    MatIconModule,
+
     HttpClientModule,
     MatFormFieldModule,
     MatInputModule,
