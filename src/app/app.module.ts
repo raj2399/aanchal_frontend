@@ -22,13 +22,17 @@ import { MatCardModule,
    import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ProductHomeComponent } from './product/product-home/product-home.component';
 import {MatIconModule} from '@angular/material/icon';
+import { SupplierDetailsComponent } from './Supplier/supplier-details/supplier-details.component';
+import { AddSupplierComponent } from './Supplier/add-supplier/add-supplier.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     AddProductComponent,
-    ProductHomeComponent
+    ProductHomeComponent,
+    SupplierDetailsComponent,
+    AddSupplierComponent
   ],
   imports: [
     BrowserModule,
