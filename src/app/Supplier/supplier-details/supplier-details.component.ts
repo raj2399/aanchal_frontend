@@ -5,7 +5,7 @@ import { MatTableDataSource } from '@angular/material/table';
 import { MatSort } from '@angular/material/sort';
 import {SelectionModel} from '@angular/cdk/collections';
 import { SupplierService } from '../../Services/supplier.service';
-
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-supplier-details',
   templateUrl: './supplier-details.component.html',
@@ -25,7 +25,7 @@ export class SupplierDetailsComponent implements OnInit {
   pageEvent: PageEvent;
   displayedColumns: string[] = ['Action1','Name', 'Mobile_no','Action'];
 
-  constructor(private _sup:SupplierService) { }
+  constructor(private _sup:SupplierService,private _route:Router) { }
 
   ngOnInit() {
     this.Supplier_dataSource.paginator=this.paginator;
@@ -82,4 +82,8 @@ export class SupplierDetailsComponent implements OnInit {
           );
       }
 
+      update_supplier(item:supplier)
+      {
+        this._route.navigate(['/updatesup',item.Supplier_id]);
+      }
 }

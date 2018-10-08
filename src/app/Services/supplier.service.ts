@@ -32,4 +32,14 @@ deleteMultiSupplier(item:supplier[])
     return this._http.delete(this.url+item.Supplier_id);
   }
 
+  getSupplierById(id:number){
+    return this._http.get(this.url+id);
+  }
+  updatesupplier(item:supplier,Supplier_id:number){
+    let body=JSON.stringify(item);
+    let head1=new HttpHeaders().set('Content-Type','application/json');
+    return this._http.put(this.url+Supplier_id,body,{headers:head1});
+
+  }
+
 }

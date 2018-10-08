@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { supplier } from '../../classes/supplier_class';
 import { SupplierService } from '../../Services/supplier.service';
+
 @Component({
   selector: 'app-add-supplier',
   templateUrl: './add-supplier.component.html',

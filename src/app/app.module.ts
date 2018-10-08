@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
+import { routing } from "./app.routing";
 import { AddProductComponent } from "./product/add-product/add-product.component";
 import { FormsModule } from '@angular/forms';
 import { MatCardModule,
@@ -24,6 +25,7 @@ import { ProductHomeComponent } from './product/product-home/product-home.compon
 import {MatIconModule} from '@angular/material/icon';
 import { SupplierDetailsComponent } from './Supplier/supplier-details/supplier-details.component';
 import { AddSupplierComponent } from './Supplier/add-supplier/add-supplier.component';
+import { UpdateSupplierComponent } from './Supplier/update-supplier/update-supplier.component';
 
 
 @NgModule({
@@ -32,11 +34,13 @@ import { AddSupplierComponent } from './Supplier/add-supplier/add-supplier.compo
     AddProductComponent,
     ProductHomeComponent,
     SupplierDetailsComponent,
-    AddSupplierComponent
+    AddSupplierComponent,
+    UpdateSupplierComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
+    routing,
     BrowserAnimationsModule,
     MatIconModule,
     MatTableModule,
