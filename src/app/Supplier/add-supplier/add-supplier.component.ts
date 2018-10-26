@@ -24,8 +24,7 @@ arr:supplier[];
       this._http.addSupplier(new supplier(0,this.Email_id,this.Name,this.Address,this.Password,this.Mobile_no)).subscribe(
         (data:any)=>{
           console.log(data);
-          this.arr.push(new supplier(0,this.Email_id,this.Name,this.Address,this.Password,this.Mobile_no));
-          //this._route.navigate(['']);
+                   //this._route.navigate(['']);
         }
         );
 

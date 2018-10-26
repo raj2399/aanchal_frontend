@@ -17,7 +17,8 @@ import { MatCardModule,
   MatSelectModule,
   MatOptionModule,
   MatSidenavModule,
-  MatMenuModule
+  MatMenuModule,
+  MatNativeDateModule
    } from '@angular/material';
    import { MatFormFieldModule } from "@angular/material/form-field";
    import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -26,7 +27,10 @@ import {MatIconModule} from '@angular/material/icon';
 import { SupplierDetailsComponent } from './Supplier/supplier-details/supplier-details.component';
 import { AddSupplierComponent } from './Supplier/add-supplier/add-supplier.component';
 import { UpdateSupplierComponent } from './Supplier/update-supplier/update-supplier.component';
-
+import { AddEmpComponent } from './Employee/add-emp/add-emp.component';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import { EmpAddComponent } from './Employee/emp-add/emp-add.component';
+import { BillComponent } from './Bill/bill/bill.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +39,10 @@ import { UpdateSupplierComponent } from './Supplier/update-supplier/update-suppl
     ProductHomeComponent,
     SupplierDetailsComponent,
     AddSupplierComponent,
-    UpdateSupplierComponent
+    UpdateSupplierComponent,
+    AddEmpComponent,
+    EmpAddComponent,
+    BillComponent
   ],
   imports: [
     BrowserModule,
@@ -50,7 +57,8 @@ import { UpdateSupplierComponent } from './Supplier/update-supplier/update-suppl
     MatProgressSpinnerModule,
     MatSortModule,
     MatCardModule,
-
+    MatDatepickerModule,
+    MatNativeDateModule,
     HttpClientModule,
     MatFormFieldModule,
     MatInputModule,
